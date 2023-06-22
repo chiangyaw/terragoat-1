@@ -19,3 +19,12 @@ resource "aws_s3_bucket" "prismaclouds3" {
     yor_trace            = "2a087dc5-cda4-41dd-8033-59d0089b58c6"
   }
 }
+
+
+resource "aws_s3_bucket_versioning" "prismaclouds3" {
+  bucket = aws_s3_bucket.prismaclouds3.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
